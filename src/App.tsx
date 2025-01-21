@@ -1,5 +1,11 @@
+import { RecomendCardSection } from "./components/section/RecomendCardSection";
+
 function App() {
-  return <div className="font-bold text-3xl">pocket clone</div>;
+  return (
+    <>
+      <RecomendCardSection />
+    </>
+  );
 }
 
 export default App;
