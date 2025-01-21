@@ -13,6 +13,8 @@ export default {
       animation: {
         autoScrollInfinite: "autoScrollInfinite 30s linear infinite",
         autoScrollInfiniteSlow: "autoScrollInfinite 50s linear infinite",
+        "spin-slow": "spin 3s linear infinite",
+        "spin-reverse": "spin 5s linear infinite reverse",
       },
     },
   },
