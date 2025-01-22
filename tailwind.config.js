@@ -6,13 +6,18 @@ export default {
   theme: {
     extend: {
       keyframes: {
-        autoScrollInfinite: {
+        autoScrollTop: {
+          "0%": { transform: "translateY(0)" },
           "100%": { transform: "translateY(-50%)" },
+        },
+        autoScrollBottom: {
+          "0%": { transform: "translateY(-50%)" },
+          "100%": { transform: "translateY(0%)" },
         },
       },
       animation: {
-        autoScrollInfinite: "autoScrollInfinite 30s linear infinite",
-        autoScrollInfiniteSlow: "autoScrollInfinite 50s linear infinite",
+        autoScrollTop: "autoScrollTop 30s linear infinite",
+        autoScrollBottom: "autoScrollBottom 50s linear infinite",
         "spin-slow": "spin 3s linear infinite",
         "spin-reverse": "spin 5s linear infinite reverse",
       },
