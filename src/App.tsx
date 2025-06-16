@@ -1,11 +1,11 @@
 import { HeroSection } from "./components/section/HeroSection";
-import { RecomendCardSection } from "./components/section/RecomendCardSection";
+import { RecommendCardSection } from "./components/section/RecommendCardSection";
 
 function App() {
   return (
     <>
       <HeroSection />
-      <RecomendCardSection />
+      <RecommendCardSection />
     </>
   );
 }

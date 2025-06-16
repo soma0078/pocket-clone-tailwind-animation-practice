@@ -1,6 +1,6 @@
 import { Card } from "../Card";
 
-export const RecomendCardSection = () => {
+export const RecommendCardSection = () => {
   const dummyData = Array.from({ length: 10 }, () => ({
     title: "It really works.",
     content:
