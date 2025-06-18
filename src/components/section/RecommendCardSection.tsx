@@ -9,20 +9,20 @@ export const RecommendCardSection = () => {
   }));
 
   return (
-    <section className="section h-[49rem] overflow-hidden">
+    <section className="section h-196 overflow-hidden">
       <div className="mx-auto max-w-7xl">
-        <div className="relative grid h-[49rem] max-h-[150vh] grid-cols-1 items-start gap-x-8 overflow-hidden md:grid-cols-2 lg:grid-cols-3">
-          <div className="animate-autoScrollTop">
+        <div className="relative grid h-196 max-h-[150vh] grid-cols-1 items-start gap-x-8 overflow-hidden md:grid-cols-2 lg:grid-cols-3">
+          <div className="animate-auto-scroll-top">
             {dummyData.map((data) => (
               <Card key={data.title} {...data} />
             ))}
           </div>
-          <div className="animate-autoScrollBottom">
+          <div className="animate-auto-scroll-bottom">
             {dummyData.map((data) => (
               <Card key={data.title} {...data} />
             ))}
           </div>
-          <div className="animate-autoScrollTop">
+          <div className="animate-auto-scroll-top">
             {dummyData.map((data) => (
               <Card key={data.title} {...data} />
             ))}

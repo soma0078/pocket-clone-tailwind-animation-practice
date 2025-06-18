@@ -1,16 +1,59 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-body {
-  overflow-x: hidden;
+@theme {
+  --default-ring-width: 3px;
+  --animate-auto-scroll-top: autoScrollTop 30s linear infinite;
+  --animate-auto-scroll-bottom: autoScrollBottom 50s linear infinite;
+  --animate-spin-slow: spin 3s linear infinite;
+  --animate-spin-reverse: spin 5s linear infinite reverse;
+
+  --breakpoint-mobile: 22.5rem; /* 360px */
+
+  @keyframes autoScrollTop {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-50%);
+    }
+  }
+  @keyframes autoScrollBottom {
+    0% {
+      transform: translateY(-50%);
+    }
+    100% {
+      transform: translateY(0%);
+    }
+  }
 }
 
 @layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+
   body {
-    @apply bg-[#fafafa];
+    overflow-x: hidden;
+    background-color: "#fafafa";
   }
+
   section {
-    @apply py-32 relative;
+    position: relative;
+    padding: 8rem 0;
   }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+@utility btn {
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: pink;
 }
