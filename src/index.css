@@ -6,8 +6,21 @@
   --animate-auto-scroll-bottom: autoScrollBottom 50s linear infinite;
   --animate-spin-slow: spin 3s linear infinite;
   --animate-spin-reverse: spin 5s linear infinite reverse;
+  --animate-gradient-border-rotate: rotate 4s linear infinite;
 
   --breakpoint-mobile: 22.5rem; /* 360px */
+
+  /* gradient colors */
+  --color-gradient-1: #feac5e;
+  --color-gradient-2: #c779d0;
+  --color-gradient-3: #4bc0c8;
+  --gradient-primary: linear-gradient(
+    127deg,
+    var(--color-gradient-1),
+    var(--color-gradient-2),
+    var(--color-gradient-3),
+    var(--color-gradient-1)
+  );
 
   @keyframes autoScrollTop {
     0% {
@@ -23,6 +36,12 @@
     }
     100% {
       transform: translateY(0%);
+    }
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(1turn);
     }
   }
 }
@@ -56,4 +75,26 @@
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
   background-color: pink;
+}
+
+@utility flex-center-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@layer utilities {
+  .gradient-border {
+    @apply flex-center-column relative z-0 rounded-[10px] overflow-hidden p-6;
+
+    &:before {
+      @apply content-[''] absolute -z-10 w-[200%] h-[300%] animate-gradient-border-rotate;
+      background: var(--gradient-primary);
+    }
+
+    &:after {
+      @apply content-[''] absolute -z-5 left-0.5 top-0.5 w-[calc(100%-4px)] h-[calc(100%-4px)] bg-white rounded-lg;
+    }
+  }
 }
